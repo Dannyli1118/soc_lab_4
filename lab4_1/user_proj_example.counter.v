@@ -101,7 +101,7 @@ module user_proj_example #(
     assign io_out = wbs_dat_o;
     assign io_oeb = !wbs_ack_o;
 
-    always @(posedge wb_clk_i, negedge wb_rst_i) begin
+    always @(posedge wb_clk_i, posedge wb_rst_i) begin
         if (wb_rst_i) begin
             delay_10_counter <= 4'd0;
         end else begin
